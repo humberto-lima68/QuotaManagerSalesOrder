@@ -1,0 +1,10 @@
+element.style {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 10rem);
+    gap: 2rem;
+    grid-auto-flow: row;
+} 
+
+.sapMLIB.sapMObjLItem {
+    padding: 0rem;
+}

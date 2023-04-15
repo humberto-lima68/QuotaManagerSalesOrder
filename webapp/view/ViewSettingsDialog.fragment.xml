@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+
+	<ViewSettingsDialog
+		id="viewSettingsDialog"
+		confirm=".onConfirmViewSettingsDialog">
+		<sortItems>
+			<ViewSettingsItem id="_IDEGen_viewsettingsitem0"
+				text="{i18n>masterSort1}"
+				key="Znomegc"
+				selected="true"/>
+
+		</sortItems>
+
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,139 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="exed.com.qotamanager.controller.ResumoSolicitar" 
+	xmlns:f="sap.ui.layout.form" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page enableScrolling="true" class="backgroundWhite" showNavButton="false" showHeader="false">
+				<content>
+					<Bar class="backgroundWhite">
+						<contentLeft>
+							<Button icon="sap-icon://nav-back" id="idB_navback" press="onVoltar"/>
+						</contentLeft>
+						<contentMiddle>
+							<Title text="{i18n>Resumo}" titleStyle="H3" id="idTitleDependentes"/>
+						</contentMiddle>
+					</Bar>
+					<f:Form class="ColumnListItemResumo" editable="true" id="form" visible="true">
+						<f:layout>
+							<f:ResponsiveGridLayout id="layoutGridLayout" labelSpanXL="0" labelSpanL="0" labelSpanM="0" labelSpanS="6" adjustLabelSpan="true"
+								emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="true"/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer id="FormContainer_tile">
+								<f:formElements>
+									<f:FormElement id="FormContainer">
+										<f:fields>
+											<Toolbar>
+												<Title text="{i18n>Solicitar}" titleStyle="H4" id="t2"/>
+												<ToolbarSpacer/>
+												<!--<Button text="Editar" icon="sap-icon://edit" press="onEdit" type="Transparent" class="Button3" id="buttonEdit"/>
+												<Button text="Cancelar" icon="sap-icon://cancel" press="onCancela" type="Transparent" class="Button3" visible="false" id="buttonCancel"/>
+												<Button text="Salvar" icon="sap-icon://save" press="onSave" type="Transparent" class="Button3" visible="false" id="buttonSave"/>-->
+											</Toolbar>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement id="FormElement">
+										<f:fields>
+											<Table id="listResumo" width="auto" noDataText="No data" showSeparators="All" growing="true" growingThreshold="30"
+												growingScrollToLoad="true" items="{ path: '/cota_outrogcSet'}" class="sapUiResponsiveMargin" itemPress="_onTableItemPress"
+												updateFinished="onModelContextChange">
+												<columns>
+													<Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false"/>
+													<Column width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true"/>
+													<Column visible="false" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Tablet" popinDisplay="Inline" mergeDuplicates="false"
+														demandPopin="true"/>
+												</columns>
+												<ColumnListItem press="handleLineItemPress">
+													<cells>
+														<ObjectIdentifier title="{Kunn2Name}" text="{ZzbrAtpskp}" titleActive="false" visible="true" id="ObjectIdentifierRemanejarKunnrName"/>
+														<Input id="qtde" placeholder="Remaining Balance: {BrDisponivel}" enabled="true" maxLength="13" class="qtde" editable="false"/>
+														<Text text="SAP: {Kunn2}" id="TextKunn2" visible="false"/>
+														<Text text="{Kunn2}" id="TextKunn2_1" visible="false"/>
+														<!--	<ObjectIdentifier title="SAP: {Kunn2}"  titleActive="false" visible="flase" id="ObjectIdentifierRemanejarKunn2"/>-->
+													</cells>
+												</ColumnListItem>
+											</Table>
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement id="FormContainer2">
+										<f:fields>
+											<Toolbar id="ToolbarResumo">
+												<Title text="{i18n>VolumeTotal}" titleStyle="H4" id="t3"/>
+												<ToolbarSpacer/>
+												<Text text="00.00 Ton" id="idTotal"/>
+											</Toolbar>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<f:Form class="editableForm" editable="true" id="form4" visible="true">
+						<f:layout>
+							<f:ResponsiveGridLayout id="layoutGridLayout4" labelSpanXL="0" labelSpanL="0" labelSpanM="0" labelSpanS="6" adjustLabelSpan="true"
+								emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="true"/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer id="FormContainer_tile4">
+								<f:formElements>
+									<f:FormElement id="FormContainer4">
+										<f:fields>
+											<List id="h1" class="listresumo1">
+												<ObjectListItem title="{Kunnr} - {Kunn2Name}" intro="{i18n>Destino}" fieldGroupIds="" iconDensityAware="true" number="{ZzbrAtpskp}"
+													id="ObjectListItemResumoKunnrName"/>
+												<ObjectListItem title="SNOP Sales Plan" fieldGroupIds="" iconDensityAware="true" number="{Zplvendaseop} {Uom}"
+													id="StandardListZplvendaseop"/>
+												<ObjectListItem visible="false" title="{i18n>PlanoVendasbacklog}" fieldGroupIds="" iconDensityAware="true" number="{Zplvendaatual} {Uom}"
+													id="StandardListZplvendaatual"/>
+												<ObjectListItem title="{i18n>PedidosColocados}" fieldGroupIds="" iconDensityAware="true" number="{Zpocolocado} {Uom}"
+													id="StandardListZpocolocado"/>
+												<ObjectListItem title="{i18n>PVLivre}" fieldGroupIds="" iconDensityAware="true" number="{Zplvendalivre} {Uom}"
+													id="StandardListZplvendalivre"/>
+												<ObjectListItem visible="false" title="{i18n>SLDMaxAllowance}" fieldGroupIds="" iconDensityAware="true" number="{Zsldmaxallow} {Uom}"
+													id="StandardListZsldmaxallow"/>
+												<ObjectListItem visible="true" title="{i18n>SaldoAtp}" fieldGroupIds="" iconDensityAware="true" number="{BrDisponivel} {Uom}"
+													id="StandardListSaldoATP"/>
+												<!--<ObjectListItem title="Cota consumida" fieldGroupIds="" iconDensityAware="true" number="{CotaConsumida} {Uom}"-->
+												<!--	id="StandardListItemCotaConsumida"/>-->
+												<!--<ObjectListItem title="Saldo Remanescente" fieldGroupIds="" iconDensityAware="true" number="{SaldoRem} {Uom}"-->
+												<!--	id="StandardListItemCotaRemanescente"/>-->
+												<!--<ObjectListItem title="Saldo Remanescente com max allowance" fieldGroupIds="" iconDensityAware="true" number="{SaldoRemmax} {Uom}"-->
+												<!--	id="StandardListItemBrQuota"/>-->
+												<!--<ObjectListItem title="Saldo à confirmar" fieldGroupIds="" iconDensityAware="true" number="{Zwmengconfirmar} {Uom}"-->
+												<!--	id="StandardListItemZwmengconfirmar"/>	-->
+											</List>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<f:Form class="editableForm" editable="true" id="button" visible="true">
+						<f:layout>
+							<f:ResponsiveGridLayout id="layoutGridLayout_button" labelSpanXL="0" labelSpanL="0" labelSpanM="0" labelSpanS="6" adjustLabelSpan="true"
+								emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="true"/>
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer id="FormContainer_tile2_button">
+								<f:formElements>
+									<f:FormElement id="FormContainer2_button">
+										<f:fields>
+											<Button text="{i18n>ConfirmarSolicitação}" press="onPressResumo" type="Transparent" id="botaoConfirmar"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<Text text="{ZzbrAtpskp}" id="textskup" visible="false"/>
+					<Text text="{Kunnr}" id="Kunnr" visible="false"/>
+					<Text text="{ZzbrAtppkt}" id="textpkt" visible="false"/>
+					<Text text="{Kunn2}" id="Kunn2" visible="false"/>
+					<Text text="{Kunn2Name}" id="Kunn2Name" visible="false"/>
+					<Text text="{Uom}" id="Uom" visible="false"/>
+					<Text text="{Vbeln}" id="textvbeln" visible="false"/>
+					<Text text="{Zchave}" id="textzchave" visible="false"/>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

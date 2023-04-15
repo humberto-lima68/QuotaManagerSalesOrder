@@ -1,0 +1,33 @@
+[{
+	"Zchave": "202302013608500",
+	"Zsearch": " ",
+	"Kunn2": "AMartins",
+	"ZzbrAtpskp": "EP 445L BR25",
+	"Kunnr": "1000007167",
+	"Kunn2Name": "Ana Martins",
+	"KunnrName": "FORTYMIL INDUSTRIA DE PLASTICOS LTDA",
+	"Ort01": "ITATIBA ",
+	"Regio": "SP",
+	"NameSkup": "NameSkup 1",
+	"Uom": "Ton",
+	"Vbeln": "0052442547",
+	"Auart": "Auart 1",
+	"Status": "F",
+	"QtOrdem": "12,375",
+	"QtFalta": "12,375",
+	"SaldoRem": " 24,750",
+	"SaldoRemmax": "24,750",
+	"CotaConsumida": " ",
+	"Zuserid": "AMartins",
+	"Zwmengconfirmar": " ",
+	"Zplvendaseop": " 50,000",
+	"Zplvendaatual": "24,750",
+	"Zpocolocado": " 13,725",
+	"Zplvendalivre": "24,750",
+	"Zsldmaxallow": "100,000",
+	"BrDisponivel": "13,725",
+	"__metadata": {
+		"uri": "new_cotaovSet(Zchave='Zchave%201',ZzbrAtpskp='ZzbrAtpskp%201',Vbeln='Vbeln%201')",
+		"type": "ZGW_APO_COTA_SRV.new_cotaov"
+	}
+}]

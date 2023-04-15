@@ -1,0 +1,37 @@
+[{
+	"Kunn2": "AMartins",
+	"ZzbrAtpskp": "EP 445L BR25",
+	"Kunn2Name": "Ana Martins",
+	"NameSkup": "",
+	"BrFcst": "12,500",
+	"BrConsq": "0,000",
+	"BrDisponivel": "Ana Martins",
+	"BrQtdsolicitar": "0,000",
+	"Uom": "Ton",
+	"Zuserid": "AMartins",
+	"Zwmengconfirmar": "12,500",
+	"Saldo_remmax": "12,500",
+	"Zplvendalivre": "12,500",
+	"__metadata": {
+		"uri": "cota_outrogcSet('Kunn2%201')",
+		"type": "ZGW_APO_COTA_SRV.cota_outrogc"
+	}
+}, {
+	"Kunn2": "Kunn2 2",
+	"ZzbrAtpskp": "EP 445L BR25",
+	"Kunn2Name": "Kunn2Name 2",
+	"NameSkup": "NameSkup 2",
+	"BrFcst": "BrFcst 2",
+	"BrConsq": "BrConsq 2",
+	"BrDisponivel": "BrDisponivel 2",
+	"BrQtdsolicitar": "BrQtdsolicitar 2",
+	"Uom": "Uom 2",
+	"Zuserid": "Zuserid 2",
+	"Zwmengconfirmar": "Zwmengconfirmar 2",
+	"Saldo_remmax": "Saldo_remmax 2",
+	"Zplvendalivre": "Zplvendalivre 2",
+	"__metadata": {
+		"uri": "cota_outrogcSet('Kunn2%202')",
+		"type": "ZGW_APO_COTA_SRV.cota_outrogc"
+	}
+}]

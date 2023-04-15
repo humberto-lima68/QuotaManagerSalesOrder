@@ -1,0 +1,27 @@
+[{
+	"Zusergc": "Acetoze1",
+	"Zusersubst": "Humbel01",
+	"Zdtinicio": "/Date(967852229000)/",
+	"Zdtfim": "/Date(1114300229000)/",
+	"Znomegc": "Antonio Luis Acetoze",
+	"Znomesubst": "Humbel01",
+	"Zacesso": "12   day(s) to expire",
+	"Zzsearch": "Zzsearch 1",
+	"__metadata": {
+		"uri": "zapo_acessoSet(Zusergc='Zusergc%201',Zusersubst='Zusersubst%201')",
+		"type": "ZGW_APO_COTA_SRV.zapo_acesso"
+	}
+}, {
+	"Zusergc": "AMartins",
+	"Zusersubst": "Zusersubst 8",
+	"Zdtinicio": "/Date(1532389829000)/",
+	"Zdtfim": "/Date(1210204229000)/",
+	"Znomegc": "Ana Martins",
+	"Znomesubst": "Znomesubst 8",
+	"Zacesso": " ",
+	"Zzsearch": "Zzsearch 8",
+	"__metadata": {
+		"uri": "zapo_acessoSet(Zusergc='Zusergc%208',Zusersubst='Zusersubst%208')",
+		"type": "ZGW_APO_COTA_SRV.zapo_acesso"
+	}
+}]

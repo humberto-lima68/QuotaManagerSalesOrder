@@ -1,0 +1,106 @@
+<mvc:View xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="exed.com.qotamanager.controller.DetailOV">
+	<Text text="{Vbeln}" id="textVbeln" visible="false"/>
+	<Text text="{ZzbrAtpskp}" id="textskp" visible="false"/>
+	<Page class="backgroundWhite" showHeader="false">
+		<content>
+			<Bar design="Header">
+				<contentLeft>
+					<Button icon="sap-icon://nav-back" id="idB_navback" press="onVoltar"/>
+				</contentLeft>
+				<contentMiddle>
+					<Title text="" titleStyle="H3" id="idTitleDependentes1"/>
+				</contentMiddle>
+			</Bar>
+			<f:Form class="editableForm" editable="true" id="form" visible="true">
+				<f:layout>
+					<f:ResponsiveGridLayout id="layoutGridLayout" labelSpanXL="0" labelSpanL="0" labelSpanM="0" labelSpanS="6" adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="true"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer id="FormContainer_tile">
+						<f:formElements>
+							<f:FormElement id="FormContainer">
+								<f:fields>
+									<List id="h2" class="listdt1">
+										<items>
+											<ObjectListItem title="{KunnrName}" intro="{i18n>Cliente}" fieldGroupIds="" iconDensityAware="true" number="{QtFalta} {Uom}" id="ObjectListItemDetail" numberState="{path:'Status',formatter:'.formatterStatus'}">
+												<attributes>
+													<ObjectAttribute title="{i18n>Ordemvenda}" text="{Vbeln}" id="ObjectAttributeOrdemVenda"/>
+												</attributes>
+												<firstStatus>
+													<ObjectStatus id="dtovobjstatus3" text=" {i18n>QtdeOV} {QtOrdem} {Uom}" state="Success"/>
+												</firstStatus>
+											</ObjectListItem>
+										</items>
+									</List>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<f:Form class="editableForm" editable="true" id="form1" visible="true">
+				<f:layout>
+					<f:ResponsiveGridLayout id="layoutGridLayout1" labelSpanXL="0" labelSpanL="0" labelSpanM="0" labelSpanS="6" adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="true"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer id="FormContainer_tile1">
+						<f:formElements>
+							<f:FormElement id="FormContainer1">
+								<f:fields>
+									<GenericTile header="{i18n>SapCode}" subheader="{Kunnr}" id="tile0" class="GenericTile"/>
+									<GenericTile header="{i18n>Unidade}" subheader="{Ort01} - {Regio}" id="title1" class="GenericTile" size="Responsive"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<f:Form class="editableForm" editable="true" id="form2" visible="true">
+				<f:layout>
+					<f:ResponsiveGridLayout id="layoutGridLayout2" labelSpanXL="0" labelSpanL="0" labelSpanM="0" labelSpanS="6" adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="true"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer id="FormContainer2">
+						<f:formElements>
+							<f:FormElement id="FormElement2">
+								<f:fields>
+									 
+								<List id="h3" class="listdt1">
+				<items>
+					<ObjectListItem title="{ZzbrAtpskp}" iconDensityAware="true" id="ObjectListItemDetail2"/>
+					<ObjectListItem visible="false" title="{i18n>PlanoVendasbacklog}" fieldGroupIds="" iconDensityAware="true" number="{Zplvendaatual} {Uom}" id="ObjectListItemSaldoRemanescente"/>
+					<ObjectListItem title="{i18n>PedidosColocados}" intro="" fieldGroupIds="" iconDensityAware="true" number="{Zpocolocado} {Uom}" id="ObjectListItemSaldoRemanescenteallowance"/>
+					<ObjectListItem title="{i18n>PVLivre}" intro="" fieldGroupIds="" iconDensityAware="true" number="{Zplvendalivre} {Uom}" id="ObjectListItemSaldoaconfirmar"/>
+					<ObjectListItem title="{i18n>SLDMaxAllowance}" intro="" fieldGroupIds="" iconDensityAware="true" number="{Zsldmaxallow} {Uom}" id="ObjSaldoaconfirmar" visible="false"/>
+					<ObjectListItem title="{i18n>SaldoAtp}" intro="" fieldGroupIds="" iconDensityAware="true" number="{BrDisponivel} {Uom}" id="ObjSaldoAtp" visible="true"/>
+				</items>
+			</List>
+								
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<f:Form class="editableForm" editable="true" id="form3" visible="true">
+				<f:layout>
+					<f:ResponsiveGridLayout id="layoutGridLayout3" labelSpanXL="0" labelSpanL="0" labelSpanM="0" labelSpanS="6" adjustLabelSpan="true" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2" singleContainerFullSize="true"/>
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer id="FormContainer_tile3">
+						<f:formElements>
+							<f:FormElement id="FormContainer3">
+								<f:fields>
+									<Button text="{i18n>Button1}" press="onPressRemanejar" type="Transparent" class="buttonDetailRemCart" id="botaoRemanejar"/>
+									<Button text="{i18n>Button2}" press="onPressSolicitar" type="Transparent" class="buttonDetailSolicitar" id="botaoSolicitar"/>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<Text text="{Kunnr}" id="textKunnr" visible="false"/>
+			<Text text="{Zchave}" id="textChave" visible="false"/>
+		</content>
+	</Page>
+</mvc:View>

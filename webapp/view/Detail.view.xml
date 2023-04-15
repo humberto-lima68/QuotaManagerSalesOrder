@@ -1,0 +1,86 @@
+<mvc:View xmlns="sap.m" xmlns:semantic="sap.f.semantic" xmlns:layout="sap.ui.layout" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:mvc="sap.ui.core.mvc" controllerName="exed.com.qotamanager.controller.Detail">
+
+	<semantic:SemanticPage id="detailPage" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+		<semantic:titleHeading>
+			<Title text="{i18n>DetailTitle}" level="H3" id="detailtitle"/>
+		</semantic:titleHeading>
+
+			<!-- Header Content -->
+		<semantic:headerContent>
+			<layout:HorizontalLayout id="dtovlayout1" allowWrapping="true">
+				<layout:VerticalLayout id="dtovlayout2" class="sapUiMediumMarginEnd">
+					<ObjectAttribute id="dtovlayout3" title="Account Manager" text="{Znomegc}"/>
+					<ObjectAttribute id="dtovlayout4" title="ID" text="{Zusergc}"/>
+				</layout:VerticalLayout>
+			</layout:HorizontalLayout>
+			
+
+		</semantic:headerContent>
+	 
+		<semantic:content>
+			
+				<Bar id="idBarMaster">
+						<contentMiddle>
+						 
+							<SearchField id="searchField" showRefreshButton="{= !${device>/support/touch} }" tooltip="{i18n>masterSearchTooltip}" width="100%" search="onSearch"/>
+						</contentMiddle>
+					</Bar>
+					<List id="list" updateFinished="onFinished" items="{ path: '/cota_ovSet' }" noDataText="{masterView>/noDataText}" itemPress="onSelectionChange">
+					<headerToolbar>
+					<OverflowToolbar id="dtoverflowtb1">
+						<SearchField id="searchField1" showRefreshButton="true" tooltip="{i18n>masterSearchTooltip}" search=".onSearch" width="auto" placeholder="Search">
+							<layoutData>
+								<OverflowToolbarLayoutData id="dtoverflowtb2" minWidth="150px" maxWidth="240px" shrinkable="true" priority="NeverOverflow"/>
+							</layoutData>
+						</SearchField>
+					</OverflowToolbar>
+				</headerToolbar>
+				
+						<items>
+							
+							<ObjectListItem title="{ZzbrAtpskp} " type="Active" intro="{KunnrName}" number="{QtFalta} {Uom}" fieldGroupIds="" iconDensityAware="true" class="ObjectListItemZzbrAtpskp" id="ObjectListItem" numberState="{path:'Status',formatter:'.formatterStatus'}">
+								<secondStatus>
+									<ObjectStatus id="dtobjectstatus1" text=" {i18n>QtdeOV}: {QtOrdem} {Uom}" state="Success"/>
+								</secondStatus>
+								<firstStatus>
+									<ObjectStatus id="dtobjectstatus2" text="{ path: 'Status', formatter: '.statusText' }" state="{ path: 'Status', formatter: '.statusState' }"/>
+								</firstStatus>
+								<attributes>
+									<ObjectAttribute title="{i18n>SAP code}" text="{Kunnr}" id="ObjectAttributeSapCode"/>
+								</attributes>
+								<attributes>
+									<ObjectAttribute title="{i18n>Ordemvenda}" text="{Vbeln}" id="ObjectAttributeOrdemVenda"/>
+								</attributes>
+							</ObjectListItem>
+						</items>
+			
+					</List>
+	 
+		</semantic:content>
+		<!--Semantic ShareMenu Buttons-->
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press=".onSendEmailPress"/>
+		</semantic:sendEmailAction>
+
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press=".onShareInJamPress"/>
+		</semantic:shareInJamAction>
+
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton id="shareTile" title="{detailView>/saveAsTileTitle}"/>
+		</semantic:saveAsTileAction>
+
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press=".onCloseDetailPress"/>
+		</semantic:closeAction>
+
+		<semantic:fullScreenAction>
+			<semantic:FullScreenAction id="enterFullScreen" visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}" press=".toggleFullScreen"/>
+		</semantic:fullScreenAction>
+		<semantic:exitFullScreenAction>
+			<semantic:ExitFullScreenAction id="exitFullScreen" visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}" press=".toggleFullScreen"/>
+		</semantic:exitFullScreenAction>
+
+	</semantic:SemanticPage>
+
+</mvc:View>
